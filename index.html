@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Porte des étoiles — Épreuve 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Fond étoilé animé -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- Bouton son -->
+  <button id="sound-toggle" class="sound-toggle" aria-label="Activer / couper le son" title="Son">
+    <span id="sound-icon">♪</span>
+  </button>
+
+  <!-- ================= ÉCRAN INTRO ================= -->
+  <section id="screen-intro" class="screen active">
+    <div class="intro-box">
+      <p class="intro-kicker">// TRANSMISSION ENTRANTE //</p>
+      <h1 class="intro-title">PORTE DES ÉTOILES</h1>
+      <p class="intro-sub">Épreuve I</p>
+      <div class="intro-text">
+        <p>Voyageur, la porte est scellée. Sept chevrons dorment dans la pierre,
+           mais quatre symboles seulement t'ouvriront la voie.</p>
+        <p>Parmi les runes anciennes se cachent quatre signes venus de
+           <em>la langue des dieux</em>. Ensemble, dans le bon ordre, ils forment
+           <strong>le mot que l'on offre</strong>.</p>
+        <p class="intro-hint">Enclenche-les l'un après l'autre. Une erreur, et la
+           connexion sera rompue.</p>
+      </div>
+      <button id="btn-start" class="btn-primary">Établir la connexion</button>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN JEU (ÉPREUVE 1) ================= -->
+  <section id="screen-gate" class="screen">
+    <div class="gate-wrap">
+      <div id="gate-container" class="gate-container">
+        <!-- La porte SVG est injectée ici par stargate.js -->
+      </div>
+
+      <!-- Cartouche à 4 emplacements -->
+      <div class="cartouche" id="cartouche" aria-label="Cartouche">
+        <span class="glyph-slot" data-slot="0"></span>
+        <span class="glyph-slot" data-slot="1"></span>
+        <span class="glyph-slot" data-slot="2"></span>
+        <span class="glyph-slot" data-slot="3"></span>
+      </div>
+
+      <!-- Zone de messages -->
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+
+      <p class="controls-hint" id="controls-hint">
+        Clique une rune pour l'enclencher — ou fais tourner l'anneau et verrouille le chevron du haut.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN ÉPREUVE 2 (planète + machine) ================= -->
+  <section id="screen-scene2" class="screen">
+    <!-- rempli par scene2.js -->
+  </section>
+
+  <!-- ================= ÉCRAN RÉVÉLATION (joyeux anniversaire) ================= -->
+  <section id="screen-reveal" class="screen">
+    <!-- rempli par reveal.js -->
+  </section>
+
+  <!-- Voyage interstellaire (overlay plein écran) -->
+  <canvas id="tunnel" class="tunnel" aria-hidden="true"></canvas>
+
+  <!-- Flash de transition -->
+  <div id="flash" class="flash" aria-hidden="true"></div>
+
+  <script src="config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/stargate.js"></script>
+  <script src="js/travel.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/puzzle2.js"></script>
+  <script src="js/scene2.js"></script>
+  <script src="js/puzzle.js"></script>
+</body>
+</html>
