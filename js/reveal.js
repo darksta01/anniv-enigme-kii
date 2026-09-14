@@ -3,8 +3,23 @@
 window.Reveal = (function () {
   const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // dé-obfuscation (miroir de l'encodage fait dans config.js)
+  const PASS = "kawoosh-abydos";
+  function decKey(gift) {
+    if (gift.gameKey) return gift.gameKey;              // clé en clair acceptée
+    if (!gift.gameKeyEnc) return "??";
+    try {
+      const raw = atob(gift.gameKeyEnc);
+      let out = "";
+      for (let i = 0; i < raw.length; i++)
+        out += String.fromCharCode(raw.charCodeAt(i) ^ PASS.charCodeAt(i % PASS.length));
+      return out;
+    } catch (e) { return "??"; }
+  }
+
   function show() {
     const gift = window.GIFT || { gameName: "le jeu", downloadUrl: "#", gameKey: "??" };
+    gift.gameKey = decKey(gift);                        // clé déchiffrée pour l'affichage/copie
     const s = document.getElementById("screen-reveal");
     s.innerHTML = `
       <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>

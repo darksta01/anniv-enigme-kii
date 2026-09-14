@@ -1,10 +1,11 @@
-<<<<<<< HEAD
 # 🌌 Porte des étoiles — Énigme d'anniversaire
 
 Un cadeau interactif dans l'univers Stargate. **Épreuve 1** : ouvrir la porte des
 étoiles en enclenchant, dans le bon ordre, les 4 runes grecques formant le mot
 **ΔΩΡΟ** (« δώρο » = *cadeau* en grec). Réussite → le trou de ver s'ouvre →
-transition vers l'**Épreuve 2** (à construire plus tard).
+**voyage interstellaire** → **Épreuve 2** : une machine alien à spirale de
+Fibonacci sur une planète désertique → révélation « Joyeux anniversaire » avec la
+clé du jeu.
 
 Le tout est un site statique **sans dépendance et sans build** (HTML/CSS/JS pur),
 prévu pour être hébergé gratuitement sur **GitHub Pages**.
@@ -87,23 +88,22 @@ Puis ouvre http://localhost:8000
 ## 📁 Structure
 
 ```
-stargate-anniversaire/
-  index.html        écran intro + épreuve 1
-  config.js         URL + clé (à remplir) — utilisé au reveal final
+anniv-enigme-kii/
+  index.html        écrans (intro, porte, planète, révélation)
+  config.js         URL + clé — révélées à la toute fin
   css/style.css     thème sombre sci-fi, responsive
   js/
     starfield.js    fond étoilé animé
     stargate.js     la porte (anneau, chevrons, runes, rotation, trou de ver)
-    puzzle.js       logique de l'énigme (séquence ΔΩΡΟ, cartouche, messages)
+    puzzle.js       logique épreuve 1 (séquence ΔΩΡΟ, cartouche, messages)
+    travel.js       voyage interstellaire (tunnel d'étoiles)
+    scene2.js       décor planète désertique + machine (épreuve 2)
+    puzzle2.js       machine à spirale de Fibonacci (activation + charge = 13)
+    reveal.js       écran festif « Joyeux anniversaire » + clé copiable
     audio.js        sons synthétisés (WebAudio) + mute
-    scene2.js       transition + placeholder Épreuve 2
 ```
 
-## 🔮 Suite
+## 🔮 Suite possible
 
-L'**Épreuve 2** n'est pas encore définie. Le code de transition est prêt
-(`js/scene2.js`) ; c'est à la fin de cette épreuve 2 que le cadeau final
-(`window.GIFT`) devra être affiché.
-=======
-# anniv-enigme-kii
->>>>>>> 2923de1908725c7da390251f9241bd4bd953555c
+L'enchaînement épreuve 1 → épreuve 2 → révélation est complet. Une épreuve 3
+pourrait s'insérer avant `reveal.js` (le cadeau final lit toujours `window.GIFT`).

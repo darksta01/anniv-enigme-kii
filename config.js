@@ -1,17 +1,20 @@
 /* =========================================================================
-   CONFIG — À REMPLIR PAR TOI
+   CONFIG
    -------------------------------------------------------------------------
-   Ces informations (URL + clé du jeu) n'apparaissent qu'à la TOUTE FIN de
-   l'énigme, après l'épreuve 2. L'épreuve 1 ne les affiche jamais.
+   L'URL et la clé n'apparaissent qu'à la TOUTE FIN (après l'épreuve 2).
 
-   ⚠️  Rappel : sur un dépôt GitHub PUBLIC, le contenu de ce fichier reste
-   techniquement lisible dans le code source. Pour un cadeau entre amis c'est
-   sans conséquence, mais si tu veux la garder secrète, utilise un dépôt privé
-   ou ne colle la vraie clé qu'au dernier moment.
+   La clé est OBFUSQUÉE (gameKeyEnc) : elle n'est pas en texte clair, pour
+   échapper aux robots qui scannent GitHub. Ce n'est pas du chiffrement fort
+   (le code sait la décoder), mais ça suffit pour un cadeau.
+
+   Pour CHANGER la clé plus tard, tu as deux options :
+     • simple : remplace la ligne par  gameKey: "TA-CLE-EN-CLAIR"
+       (reveal.js accepte les deux ; mais alors elle est lisible dans le code) ;
+     • propre : redonne-moi la nouvelle clé et je te régénère le gameKeyEnc.
    ========================================================================= */
 
 window.GIFT = {
   gameName: "Vintage Story",
   downloadUrl: "https://account.vintagestory.at/createaccount",   // page de téléchargement / connexion
-  gameKey: "SpYYHOfGPZHpv3+SlXKHJtzZ7gPEghxykjIK1lWgquY="                  // <-- COLLE TA CLÉ ICI
+  gameKeyEnc: "OBEuNic8DmoxODEUGUBAMhs3JDsiWRs4TgM/NgwJDxYEGSFmUA4uAx4GMlw="
 };
