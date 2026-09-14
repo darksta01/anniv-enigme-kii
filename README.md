@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌌 Porte des étoiles — Énigme d'anniversaire
 
 Un cadeau interactif dans l'univers Stargate. **Épreuve 1** : ouvrir la porte des
@@ -103,3 +104,6 @@ stargate-anniversaire/
 L'**Épreuve 2** n'est pas encore définie. Le code de transition est prêt
 (`js/scene2.js`) ; c'est à la fin de cette épreuve 2 que le cadeau final
 (`window.GIFT`) devra être affiché.
+=======
+# anniv-enigme-kii
+>>>>>>> 2923de1908725c7da390251f9241bd4bd953555c
